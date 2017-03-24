@@ -3,11 +3,32 @@
   <head>
     <meta charset="utf-8">
     <title>To-Do List</title>
+    <link rel="stylesheet" href="vendors/pure.css">
     <script src="vendors/jquery.js" charset="utf-8"></script>
     <script src="scripts/client.js" charset="utf-8"></script>
   </head>
   <body>
 <h1>TO DO</h1>
+
+<form class="newTask" action="index.html" method="post">
+  <input type="text" id="taskName" placeholder="Add Task Here">
+  <input type="submit" id="addTaskButton" value="submit">
+</form>
+
+<table class="pure-table pure-table-bordered">
+  <thead>
+    <tr>
+      <th>Task</th>
+      <th>Complete?</th>
+    </tr>
+  </thead>
+  <tbody id="taskList">
+    <tr>
+      <td>write this page</td>
+      <td>nope</td>
+    </tr>
+  </tbody>
+</table>
 
   </body>
 </html>
