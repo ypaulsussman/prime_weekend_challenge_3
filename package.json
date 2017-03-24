@@ -1,0 +1,26 @@
+{
+  "name": "todo_list",
+  "version": "1.0.0",
+  "description": "For this weekend's challenge, you are going to create a 'TO DO' application. Here are the specific components for the challenge:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ypaulsussman/prime_weekend_challenge_3.git",
+    "start": "node server/app.js"
+  },
+  "author": "Y Paul",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ypaulsussman/prime_weekend_challenge_3/issues"
+  },
+  "homepage": "https://github.com/ypaulsussman/prime_weekend_challenge_3#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "jquery": "^3.2.1",
+    "pg": "^6.1.5"
+  }
+}
