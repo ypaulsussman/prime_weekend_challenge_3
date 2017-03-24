@@ -10,7 +10,7 @@
   <body>
 <h1>TO DO</h1>
 
-<form class="newTask" action="index.html" method="post">
+<form id="newTask" action="index.html" method="post">
   <input type="text" id="taskName" placeholder="Add Task Here">
   <input type="submit" id="addTaskButton" value="submit">
 </form>
@@ -19,7 +19,9 @@
   <thead>
     <tr>
       <th>Task</th>
-      <th>Complete?</th>
+      <th>Complete</th>
+      <th>Delete</th>
+
     </tr>
   </thead>
   <tbody id="taskList">

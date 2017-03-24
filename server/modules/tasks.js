@@ -33,6 +33,21 @@ router.get('/', function(req, res){
   });//end pool.connect
 });//end router.get
 
+router.post('/add', function(req, res) {
+  var name = req.body.name;
+  pool.connect(function(errorConnectingToDb, db, done) {
+    if (errorConnectingToDb) {
+      res.sendStatus(500);
+      console.log("db connection error!");
+    } else {
+      db.query('INSERT INTO "tasks" ("name", "complete") VALUES ($1, false);',
+      [name],
+      function(queryError, result) { done(); if (queryError) { res.sendStatus(500); } else { res.sendStatus(201); console.log("add worked"); }
+      });
+    }
+  });
+});//end router.post
+
 
 
 
