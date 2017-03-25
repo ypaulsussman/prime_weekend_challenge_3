@@ -48,12 +48,13 @@ function appendQuery(response) {
     var task = response[i];
     $('#taskList').append('<tr id="'+ task.id +'">');
     var $el = $('#taskList').children().last();
-    $el.append('<td><h3>' + task.name + '</h3></td>');
+    $el.append('<td>' + task.name + '</td>');
     var idSelector = '#'+task.id;
     if (task.complete) {
-      $(idSelector).addClass("completeTask");
-      $el.append('<td><button class="completeButton" data-taskid="'+ task.id+'" disabled>Complete</button></td>');
+      $(idSelector).addClass("warning");
+      $el.append('<td><button disabled class="completeButton buttonOff" data-taskid="'+ task.id+'">Complete</button></td>');
     } else {
+      $(idSelector).addClass("info");
       $el.append('<td><button class="completeButton" data-taskid="'+ task.id+'">Complete</button></td>');
     }
     $el.append('<td><button class="deleteButton" data-taskid="'+ task.id+'">Delete</button></td><br>');

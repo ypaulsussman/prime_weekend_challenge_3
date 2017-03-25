@@ -1,12 +1,51 @@
+html, body{
+  background-image: url("../vendors/Wrinkled_Paper_Texture_Free_Creative_Commons_(6816216700)a.jpg");
+  background-size: cover;
+}
+
 .container{
   margin: auto;
   width: 50%;
 }
 
-.completeTask {
-  background-color: salmon;
+#toDoTitle, #taskName, #addTaskButton, th, .info button, .warning button {
+  font-family: monospace;
 }
 
-.completeTask h3 {
+th{
+  text-align: center;
+  font-size: 3em;
+}
+
+.info td {
+  font-family: fantasy;
+  font-size: 1.5em;
+}
+
+.warning td {
+  font-family: cursive;
+  font-size: 1.5em;
+}
+
+.info button {
   font-size: .75em;
+  float: right;
+}
+
+.warning button {
+  font-size: .75em;
+  float: right;
+}
+
+#taskName, #addTaskButton{
+  font-size: 1.25em;
+}
+
+#toDoTitle{
+  font-size: 2em;
+}
+
+
+.buttonOff{
+  color: #ACACAC;
 }

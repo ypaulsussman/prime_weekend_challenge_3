@@ -13,30 +13,28 @@
   <body>
 
 <div class="container">
-  <h1>TO DO</h1>
+  <table class="table table-responsive table-hover">
+    <thead>
+      <tr>
+        <th colspan="3">Your Tasks:</th>
+      </tr>
+    </thead>
+    <tbody id="taskList">
+    </tbody>
+  </table>
+</div>
+
+
+<div class="container">
+  <h1 id="toDoTitle">New Tasks!</h1>
   <form id="newTask" action="index.html" method="post">
     <input type="text" id="taskName" placeholder="Add Task Here">
     <input type="submit" id="addTaskButton" value="submit">
   </form>
 </div>
 
-<div class="container">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Task</th>
-        <th>Complete</th>
-        <th>Delete</th>
 
-      </tr>
-    </thead>
-    <tbody id="taskList">
-      <tr>
-        <td>write this page</td>
-        <td>nope</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+
+
   </body>
 </html>
