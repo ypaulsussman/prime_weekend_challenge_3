@@ -58,11 +58,12 @@ function appendQuery(response) {
     var $el = $('#taskList').children().last();
     $el.append('<td>' + task.name + '</td>');
     var idSelector = '#'+task.id;
+    $el.append('<td><button class="completeButton pure-button button-error" data-taskid="'+ task.id+'">Complete</button></td>');
+    $el.append('<td><button class="deleteButton pure-button button-error" data-taskid="'+ task.id+'">Delete</button></td><br>');
     if (task.complete) {
       $(idSelector).addClass("completeTask");
     }
-    $el.append('<td><button class="completeButton pure-button button-error" data-taskid="'+ task.id+'">Complete</button></td>');
-    $el.append('<td><button class="deleteButton pure-button button-error" data-taskid="'+ task.id+'">Delete</button></td><br>');
+
   }
 }
 
@@ -95,12 +96,14 @@ function completeTask(taskID) {
 }
 
 function deleteTask(taskID) {
-  $.ajax({
-    type: "DELETE",
-    url: "/tasks/delete/" + taskID,
-    success: function() {
-      console.log("delete call success");
-      getTasks();
-    }
-  });
+  if (window.confirm("Are you sure you want to delete this task?")) {
+    $.ajax({
+      type: "DELETE",
+      url: "/tasks/delete/" + taskID,
+      success: function() {
+        console.log("delete call success");
+        getTasks();
+      }
+    });
+  }
 }

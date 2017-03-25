@@ -17,7 +17,7 @@ router.get('/', function(req, res){
     if (errorConnectingToDb) {
       res.sendStatus(500);
     } else {
-      db.query('SELECT * from "tasks" ORDER BY "id" ASC;',
+      db.query('SELECT * from "tasks" ORDER BY "complete" ASC;',
       function(queryError, result) {
         done();
         if (queryError) {
