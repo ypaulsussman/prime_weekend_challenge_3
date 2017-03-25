@@ -32,14 +32,6 @@ function addEventListeners() {
 
 }//end addEventListeners
 
-
-
-
-
-
-
-
-
 function getTasks() {
   $.ajax({
     type: "GET",
@@ -56,13 +48,15 @@ function appendQuery(response) {
     var task = response[i];
     $('#taskList').append('<tr id="'+ task.id +'">');
     var $el = $('#taskList').children().last();
-    $el.append('<td>' + task.name + '</td>');
+    $el.append('<td><h3>' + task.name + '</h3></td>');
     var idSelector = '#'+task.id;
-    $el.append('<td><button class="completeButton pure-button button-error" data-taskid="'+ task.id+'">Complete</button></td>');
-    $el.append('<td><button class="deleteButton pure-button button-error" data-taskid="'+ task.id+'">Delete</button></td><br>');
     if (task.complete) {
       $(idSelector).addClass("completeTask");
+      $el.append('<td><button class="completeButton" data-taskid="'+ task.id+'" disabled>Complete</button></td>');
+    } else {
+      $el.append('<td><button class="completeButton" data-taskid="'+ task.id+'">Complete</button></td>');
     }
+    $el.append('<td><button class="deleteButton" data-taskid="'+ task.id+'">Delete</button></td><br>');
 
   }
 }
@@ -96,7 +90,15 @@ function completeTask(taskID) {
 }
 
 function deleteTask(taskID) {
-  if (window.confirm("Are you sure you want to delete this task?")) {
+  swal({
+    title: "Reeeeeeeeaaaaaaaally?",
+    text: "Are you sure you want to delete this task?",
+    type: "warning",
+    showCancelButton: true,
+    closeOnConfirm: true,
+    confirmButtonText: "Yes, delete it!",
+    confirmButtonColor: "salmon"
+  }, function() {
     $.ajax({
       type: "DELETE",
       url: "/tasks/delete/" + taskID,
@@ -105,5 +107,16 @@ function deleteTask(taskID) {
         getTasks();
       }
     });
-  }
+  });
 }
+
+// if (window.confirm("Are you sure you want to delete this task?")) {
+  // $.ajax({
+  //   type: "DELETE",
+  //   url: "/tasks/delete/" + taskID,
+  //   success: function() {
+  //     console.log("delete call success");
+  //     getTasks();
+  //   }
+  // });
+// }

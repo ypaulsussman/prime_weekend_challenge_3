@@ -1,4 +1,12 @@
+.container{
+  margin: auto;
+  width: 50%;
+}
+
 .completeTask {
   background-color: salmon;
-  font-size: .5em;
+}
+
+.completeTask h3 {
+  font-size: .75em;
 }
