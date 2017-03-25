@@ -16,16 +16,13 @@ router.get('/', function(req, res){
   pool.connect(function(errorConnectingToDb, db, done) {
     if (errorConnectingToDb) {
       res.sendStatus(500);
-      console.log("db connection error!");
     } else {
-      db.query('SELECT * from "tasks" ORDER BY "id" DESC;',
+      db.query('SELECT * from "tasks" ORDER BY "id" ASC;',
       function(queryError, result) {
         done();
         if (queryError) {
           res.sendStatus(500);
-          console.log("querry error!");
         } else {
-          console.log(result);
           res.send(result.rows);
         }//end else
       });//end db.query
@@ -38,15 +35,42 @@ router.post('/add', function(req, res) {
   pool.connect(function(errorConnectingToDb, db, done) {
     if (errorConnectingToDb) {
       res.sendStatus(500);
-      console.log("db connection error!");
     } else {
       db.query('INSERT INTO "tasks" ("name", "complete") VALUES ($1, false);',
       [name],
-      function(queryError, result) { done(); if (queryError) { res.sendStatus(500); } else { res.sendStatus(201); console.log("add worked"); }
+      function(queryError, result) { done(); if (queryError) { res.sendStatus(500); } else { res.sendStatus(201); }
       });
     }
   });
 });//end router.post
+
+router.put('/complete', function(req, res) {
+  var taskID = req.body.taskID;
+  pool.connect(function(errorConnectingToDb, db, done) {
+    if (errorConnectingToDb) {
+      res.sendStatus(500);
+    } else {
+      db.query('UPDATE "tasks" SET "complete" = TRUE WHERE "id" = $1;',
+      [taskID],
+      function(queryError, result) { done(); if (queryError) { res.sendStatus(500); } else { res.sendStatus(201);}
+      });
+    }
+  });
+});
+
+
+router.delete('/delete/:id', function(req, res) {
+  var delTask = req.params.id;
+  pool.connect(function(errorConnectingToDb, db, done) {
+    if (errorConnectingToDb) {
+      res.sendStatus(500);
+    } else {
+      db.query('DELETE FROM "tasks" WHERE "id" = $1;', [delTask],
+      function(queryError, result) { done(); if (queryError) { res.sendStatus(500); } else { res.sendStatus(201); }
+      });
+    }
+  });
+});
 
 
 
