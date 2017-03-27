@@ -7,9 +7,6 @@ $(document).ready(function() {
 });
 
 
-
-
-
 function addEventListeners() {
   $("#newTask").on('submit', function(event) {
     event.preventDefault();
@@ -29,8 +26,8 @@ function addEventListeners() {
     taskID = $(this).data('taskid');
     deleteTask(taskID);
   });//end
-
 }//end addEventListeners
+
 
 function getTasks() {
   $.ajax({
@@ -110,14 +107,3 @@ function deleteTask(taskID) {
     });
   });
 }
-
-// if (window.confirm("Are you sure you want to delete this task?")) {
-  // $.ajax({
-  //   type: "DELETE",
-  //   url: "/tasks/delete/" + taskID,
-  //   success: function() {
-  //     console.log("delete call success");
-  //     getTasks();
-  //   }
-  // });
-// }

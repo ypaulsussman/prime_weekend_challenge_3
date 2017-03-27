@@ -18,12 +18,7 @@ router.get('/', function(req, res){
       res.sendStatus(500);
     } else {
       db.query('SELECT * from "tasks" ORDER BY "complete" ASC;',
-      function(queryError, result) {
-        done();
-        if (queryError) {
-          res.sendStatus(500);
-        } else {
-          res.send(result.rows);
+      function(queryError, result) { done(); if (queryError) { res.sendStatus(500); } else { res.send(result.rows);
         }//end else
       });//end db.query
     }//end else
