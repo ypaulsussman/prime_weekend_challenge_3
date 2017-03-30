@@ -12,11 +12,7 @@ For this weekend's challenge, you are going to create a 'TO DO' application.
 
 [X] Each task should have an option to 'Complete' or 'Delete'.
 
-[x] When a task is complete, its visual representation should change on the front end.
-
-      (For example, the background of the task container could change, and/or the complete option could be 'checked off'.
-      
-      Each of these are accomplished in CSS, but will need to hook into logic to know whether or not the task is complete.)
+[x] When a task is complete, its visual representation should change on the front end. _(For example, the background of the task container could change, and/or the complete option could be 'checked off.' Each of these are accomplished in CSS, but will need to hook into logic to know whether or not the task is complete.)_
 
 [X] Whether or not a task is complete should also be stored in the database.
 
