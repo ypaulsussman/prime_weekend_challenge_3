@@ -4,12 +4,12 @@
   "description": "For this weekend's challenge, you are going to create a 'TO DO' application. Here are the specific components for the challenge:",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ypaulsussman/prime_weekend_challenge_3.git",
-    "start": "node server/app.js"
+    "url": "git+https://github.com/ypaulsussman/prime_weekend_challenge_3.git"
   },
   "author": "Y Paul",
   "license": "ISC",

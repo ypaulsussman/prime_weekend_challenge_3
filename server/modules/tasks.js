@@ -3,10 +3,11 @@ var router = express.Router();
 var pg = require('pg');
 
 var config = {
-  database: 'chi',
-  host: 'localhost',
+  database: 'lkcvknak',
+  password: 'hYyP0WRFVQJKixxL4D3Nzf3HMskQz9YR',
+  host: 'postgres://lkcvknak:hYyP0WRFVQJKixxL4D3Nzf3HMskQz9YR@stampy.db.elephantsql.com:5432/lkcvknak',
   port: 5432,
-  max: 10,
+  max: 2,
   idleTimeoutMillis: 30000
 };
 
@@ -16,6 +17,7 @@ router.get('/', function(req, res){
   pool.connect(function(errorConnectingToDb, db, done) {
     if (errorConnectingToDb) {
       res.sendStatus(500);
+      console.log("error connecting: ");
     } else {
       db.query('SELECT * from "tasks" ORDER BY "complete" ASC;',
       function(queryError, result) { done(); if (queryError) { res.sendStatus(500); } else { res.send(result.rows);

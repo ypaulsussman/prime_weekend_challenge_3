@@ -1,7 +1,6 @@
 var taskID;
 
 $(document).ready(function() {
-  console.log("suuuup");
   getTasks();
   addEventListeners();
 });
