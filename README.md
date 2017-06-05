@@ -1,34 +1,29 @@
-# To-Do App! #
+# To-Do List
 
-For this weekend's challenge, you are going to create a 'TO DO' application.
+Y Paul Sussman: March 24th, 2017; Version 1.0
 
-### Specific components: ###
+## Application Overview
 
-[x] Create a front end experience that allows a user to create a task.
+This was my first from-scratch full-stack application: it connects to a local PostgreSQL database.
 
-[X] When the task is created, it should be stored inside of a database (SQL)
+## Getting Started
 
-[X] Whenever a task is created the front end should refresh to show all tasks that need to be completed.
+Fork, clone, or download the project, then run `npm install`.
 
-[X] Each task should have an option to 'Complete' or 'Delete'.
+You'll also need to have [PostgreSQL downloaded](https://www.postgresql.org/download/macosx/), then set up the database and table by copying and running the contents of `database.sql`. (_For this, you can either use the terminal or a client like_ [Postico](https://eggerapps.at/postico/).)
 
-[x] When a task is complete, its visual representation should change on the front end. _(For example, the background of the task container could change, and/or the complete option could be 'checked off.' Each of these are accomplished in CSS, but will need to hook into logic to know whether or not the task is complete.)_
+## Built With
 
-[X] Whether or not a task is complete should also be stored in the database.
+* HTML 5, CSS 3, Bootstrap, and jQuery;
+* Node.js, Express.js, and PG; and
+* PostgreSQL.
 
-[X] Deleting a task should remove it both from the Front End as well as the Database.
+## Learning Value
+Writing this app was fairly straightforward, but the major learning experience came a few weeks after completion. I'd begun experimenting with Heroku deployments, using mLab for my MongoDB remotes, and thought to  replicate that process with a similar service on the PostgreSQL side.
 
-[X] Make sure that you also show us your best styling chops.
+Heroku has its native PostgreSQL hosting service, but I'd wanted to try something farther afield, so I went with [ElephantSQL](https://www.elephantsql.com). The product they make is undoubtably worthwhile: but with documentation designed for an experienced admin (_as opposed to, well, March-Y-Paul_), it was unable to guide me through the process of connection. (_In retrospect, the issue was ~3 minutes of setting up environmental variables; I simply didn't know at the time where to add them, or even how to_ learn _where to add them._) Such began my healthy respect for the practice (_and trials_) of DevOps...
 
-Think through all the logic that will be needed prior to writing any code.
-
-Include a .sql file with CREATE TABLE statements or you can create your schema automatically when your app loads.
-
-### HARD MODE (Stretch Goal 1) ###
-
-[x] In whatever fashion you would like, create an 'are you sure: yes / no' option when deleting a task.
-Once again, you can interrupt this however you would like.
-
-### PRO MODE (Stretch Goal 2) ###
-
-[x] Adjust the logic so that completed tasks are brought to the bottom of the page, where the remaining tasks left to complete are brought to the top of the list.
+## Demo
+<p align="center">
+  <img src="To-Do_List.gif" alt="walkthrough gif"/>
+</p>

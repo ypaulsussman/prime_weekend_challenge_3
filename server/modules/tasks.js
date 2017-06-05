@@ -3,11 +3,10 @@ var router = express.Router();
 var pg = require('pg');
 
 var config = {
-  database: 'lkcvknak',
-  password: 'hYyP0WRFVQJKixxL4D3Nzf3HMskQz9YR',
-  host: 'postgres://lkcvknak:hYyP0WRFVQJKixxL4D3Nzf3HMskQz9YR@stampy.db.elephantsql.com:5432/lkcvknak',
+  database: 'chi',
+  host: 'localhost',
   port: 5432,
-  max: 2,
+  max: 10,
   idleTimeoutMillis: 30000
 };
 
